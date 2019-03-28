@@ -11,8 +11,10 @@
   <script src="{% static 'css/bootstrap.min.js' %}"></script>
 </head>
 <body>
-  <from method="POST">
+  <form method="POST">
     {% csrf_token %}
-    {}
+    {{ form }}
+    <button type="submit">Войти</button>
+  </form>
 </body>
 </html>
