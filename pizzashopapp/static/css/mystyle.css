@@ -8,6 +8,10 @@ body {
   background-color: #7B2324;
 }
 
+.text-white {
+  color: white;
+}
+
 .btn-red {
   color: white;
   background-color: #E21E35;
@@ -46,11 +50,19 @@ body {
   color: #FFFFFF;
 }
 
-
 /* SIDE BAR - MENU */
 .sidebar .list-group {
   padding: 0;
   background-color: #7B2324;
+}
+
+.sidebar .list-group > span {
+  color: white;
+  display: block;
+  margin-top: 20px;
+  padding: 20px 30px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .sidebar .list-group .list-group-item,
@@ -77,4 +89,22 @@ body {
 .sidebar .list-group .list-group-item.active .badge {
   background-color: #E31E25;
   color: #E0DEEB;
+}
+
+/* SIDE BAR - LOGOUT */
+.sidebar > div:last-child {
+  padding: 30px;
+}
+
+.sidebar > div:last-child .btn {
+  width: 100%;
+}
+
+/* SIDE BAR - CONTENT */
+.content {
+  padding: 0 40px;
+}
+
+.content .panel {
+  border: none;
 }
