@@ -1,22 +1,19 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
-  <script src="{% static 'css/bootstrap.min.js' %}"></script>
-</head>
-<body>
-  <h2>Страница регистрации</h2>
-  <form method="POST" enctype='multipart/form-data'>
-      {% csrf_token %}
-    {{ user_form.as_p }}
-    {{ pizzashop_form.as_p }}
-    <button type="submit">Зарегистрироваться</button>
-  </form>
-</body>
-</html>
+{% extends 'base_signup.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}Войти{% endblock %}
+
+{% block heading %}Пиццерия - страница входа!{% endblock %}
+
+{% block content %}
+<form method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <h3>Владелец</h3>
+  {% bootstrap_form user_form %}
+  <h3>Пиццерия</h3>
+  {% bootstrap_form pizzashop_form %}
+  <button type="submit">Зарегистрироваться</button>
+</form>
+<a href="{% url 'pizzashop-sign-in' %}">У вас есть профиль?</a>
+{% endblock %}
